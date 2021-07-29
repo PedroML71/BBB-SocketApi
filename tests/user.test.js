@@ -1,0 +1,1 @@
+// área de testes dos endpoints do user utilizando frisby

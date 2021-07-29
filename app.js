@@ -27,11 +27,11 @@ app.use("/user", userRoutes);
 // Error Middleware
 app.use(errors.middleware);
 
-// conectando a api na porta 8080
-const server = app.listen(8080);
+// conectando a api na porta existente no environment
+const server = app.listen(process.env.PORT);
 
 // inicializando o socket
 const io = require("./socket").init(server);
 io.on("connection", (socket) => {
-  console.log("Client connected");
+  console.log("Client connected", socket);
 });

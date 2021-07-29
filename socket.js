@@ -2,11 +2,11 @@ let io;
 
 // inicializando socket.io
 module.exports = {
-  // funcao que inicial o socket
+  // funcao que inicia o socket
   init: (httpServer) => {
     io = require("socket.io")(httpServer, {
       cors: {
-        origin: "http://localhost:3000",
+        origin: "https://bbbdev.artstech.com.br/",
         methods: ["GET", "POST"],
       },
     });

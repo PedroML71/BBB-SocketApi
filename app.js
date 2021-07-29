@@ -5,6 +5,7 @@ const userRoutes = require("./src/routes/user");
 const errors = require("./middleware/errors");
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 // permite que a api responda em json
 app.use(express.json());
@@ -28,10 +29,7 @@ app.use("/user", userRoutes);
 app.use(errors.middleware);
 
 // conectando a api na porta existente no environment
-const server = app.listen(
-  process.env.PORT || 8080,
-  () => console.log(`listening at ${process.env.PORT ? process.env.PORT : 8080}`)
-);
+const server = app.listen(PORT, () => console.log(`listening at ${PORT}`));
 
 // inicializando o socket
 const io = require("./socket").init(server);

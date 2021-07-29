@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha ./tests/**/*$NAME*.{test,spec}.js --exit",
     "start": "node app.js",
+    "dev": "nodemon app.js",
     "lint": "eslint --no-inline-config --ext .js, --no-error-on-unmatched-pattern -c .eslintrc.js ."
   },
   "author": "",

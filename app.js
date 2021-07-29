@@ -28,7 +28,7 @@ app.use("/user", userRoutes);
 app.use(errors.middleware);
 
 // conectando a api na porta existente no environment
-const server = app.listen(process.env.PORT);
+const server = app.listen(process.env.PORT || 8080);
 
 // inicializando o socket
 const io = require("./socket").init(server);

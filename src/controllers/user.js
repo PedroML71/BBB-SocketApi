@@ -4,9 +4,10 @@ const io = require("../../socket");
 exports.createUserWarningSignal = (req, res, next) => {
   try {
     const userId = req.body.userId;
+    setImmediate(() => {
+      io.getIO().emit("user", { action: "warning", userId: userId });
+    });
 
-    io.getIO().emit("user", { action: "warning", userId: userId });
-  
     res.status(200).json({ message: "sinal warning enviado" });
   } catch (err) {
     console.error(err);

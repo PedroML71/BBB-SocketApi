@@ -1,11 +1,12 @@
 const express = require("express");
+require('dotenv').config();
 
 const testRoutes = require("./src/routes/test");
 const userRoutes = require("./src/routes/user");
 const errors = require("./middleware/errors");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const { PORT } = process.env;
 
 // permite que a api responda em json
 app.use(express.json());

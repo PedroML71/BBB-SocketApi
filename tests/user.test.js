@@ -1,11 +1,12 @@
 const frisby = require('frisby');
+require('dotenv').config();
 
-const HEROKU_URL = 'https://bbb-heroku-test.herokuapp.com';
+const URL = `localhost:${process.env.PORT}`;
 
 describe('rota /user/status/warning', () => {
   it('retorna "sinal warning enviado"', async () => {
     await frisby
-      .post(`${HEROKU_URL}/user/status/warning`,
+      .post(`http://${URL}/user/status/warning`,
         {
           userId: 'uma string qualquer',
         })

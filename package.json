@@ -2,6 +2,9 @@
   "name": "api-test",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "8.x"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests/**/*$NAME*.{test,spec}.js --exit",
